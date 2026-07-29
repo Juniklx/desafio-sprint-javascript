@@ -492,7 +492,6 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
     flex-direction: column;
     width: 70%;
     gap: 0;
-    text-align: center;
   }
 
   .contato__formulario {

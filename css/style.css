@@ -39,7 +39,7 @@ picture,
 svg,
 iframe {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -94,7 +94,8 @@ button:focus-visible {
 }
 
 .cabecalho__logo__ford {
-  width: 6.25rem;
+  width: 6rem;
+  flex-shrink: 0;
 }
 
 #menu-hamburguer {
@@ -240,10 +241,10 @@ button:focus-visible {
   pointer-events: none;
 }
 
-body:has(#menu-hamburguer:checked) .pagina {
+body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
   filter: blur(8px);
-  pointer-events: none; /* Impede cliques em links/botões enquanto estiver desfocado */
-  user-select: none;    /* Impede que o usuário selecione textos por acidente */
+  pointer-events: none;
+  user-select: none;
 }
 
 .pagina__fotos {
@@ -535,13 +536,30 @@ body:has(#menu-hamburguer:checked) .pagina {
   }
 
   .cabecalho__menu {
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    background: var(--cor-branca);
+    box-shadow: 0 10px 15px rgba(0,0,0,.1);
+    overflow: hidden;
     max-height: 0;
     opacity: 0;
-    overflow: hidden;
+    visibility: hidden;
+    transform: translateY(-15px);
     transition:
-      max-height var(--transition),
-      transform var(--transition);
+        max-height var(--transition),
+        opacity var(--transition),
+        transform var(--transition),
+        visibility 0s linear 0.35s;
   }
+
+  .cabecalho__logo__ford {
+    width: 4.5rem;
+  } 
 
   .cabecalho__menu__hamburguer {
     display: flex;
@@ -568,18 +586,12 @@ body:has(#menu-hamburguer:checked) .pagina {
   }
 
   #menu-hamburguer:checked + .cabecalho__menu__hamburguer + .cabecalho__menu {
-    display: flex;
-    max-height: 300px;
-    flex-direction: column;
+    max-height: 350px;
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
-    position: absolute;
-    top: 4rem;
-    left: 0;
-    width: 100%;
-    background: var(--cor-branca);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     gap: 0;
+    transition-delay: 0s;
   }
 
   #menu-hamburguer:checked + .cabecalho__menu__hamburguer span:nth-child(1) {
@@ -628,7 +640,7 @@ body:has(#menu-hamburguer:checked) .pagina {
     display: block;
     width: 80%;
     margin-bottom: 6rem;
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
   }
 

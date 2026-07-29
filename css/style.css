@@ -194,8 +194,8 @@ button:focus-visible {
 
 .pagina__texto {
   width: 55%;
-  margin: 2rem auto 1.1rem;
-  font-size: 1rem;
+  margin: 2rem 0;
+  font-size: 0.8rem;
   line-height: 1.8;
   text-align: center;
 }
@@ -464,7 +464,7 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
 
 @media (max-width: 1200px) {
   .pagina {
-    gap: 3rem;
+    gap: 0rem;
   }
 
   .cabecalho__menu {
@@ -482,6 +482,20 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
   .pagina__texto {
     width: 80%;
     font-size: 0.8rem;
+  }
+
+  .pagina__video {
+    width: 100%;
+    aspect-ratio: 4 / 2;
+    overflow: hidden;
+  }
+
+  .pagina__video iframe {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.9);
+    transform-origin: center;
+    border: 0;
   }
 
   .botao__ranger {
@@ -610,6 +624,10 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
     padding: 2rem;
     width: 100%;
     border-bottom: 2px solid #f0f4f8;
+  }
+
+  .pagina {
+    gap: 1.5rem;
   }
 
   .pagina__ranger__link {

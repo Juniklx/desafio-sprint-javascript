@@ -1,7 +1,6 @@
 let carouselArr = [];
 
 class Carousel {
-
     constructor(imagem, titulo, link) {
         this.imagem = imagem;
         this.titulo = titulo;
@@ -9,7 +8,6 @@ class Carousel {
     }
 
     static Start(arr) {
-
         if (!arr || arr.length === 0) {
             throw "Method Start need a Array Variable.";
         }
@@ -34,7 +32,6 @@ class Carousel {
         carousel.classList.add("fade");
 
         setTimeout(() => {
-
             const item = carouselArr[Carousel._sequence];
 
             carousel.innerHTML = `
@@ -53,7 +50,6 @@ class Carousel {
             if (Carousel._sequence >= Carousel._size) {
                 Carousel._sequence = 0;
             }
-
         }, 600);
     }
 }

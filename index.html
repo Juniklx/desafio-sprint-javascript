@@ -1,121 +1,135 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Novo lançamento: Ford Ranger 2022</title>
-    <meta
-      name="description"
-      content="Conheça a nova Ford Ranger 2022: motores turbo diesel, tração 4x4 e alta conectividade com a central SYNC e o FordPass Connect."
-    />
-    <link rel="icon" type="image/png" href="img/ford-logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-    />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <script src="js/carousel.js"></script>
-  </head>
-  <body>
-    <header class="cabecalho">
-      <a href="index.html" class="cabecalho__logo">
-        <img
-          src="img/logo-ford-256.png"
-          class="cabecalho__logo__ford"
-          alt="Ford"
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Novo lançamento: Ford Ranger 2022</title>
+        <meta
+            name="description"
+            content="Conheça a nova Ford Ranger 2022: motores turbo diesel, tração 4x4 e alta conectividade com a central SYNC e o FordPass Connect."
         />
-      </a>
-      <input type="checkbox" id="menu-hamburguer" />
-      <label for="menu-hamburguer" class="cabecalho__menu__hamburguer">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+        <link rel="icon" type="image/png" href="img/ford-logo.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+        />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="js/carousel.js"></script>
+    </head>
+    <body>
+        <header class="cabecalho">
+            <a href="index.html" class="cabecalho__logo">
+                <img
+                    src="img/logo-ford-256.png"
+                    class="cabecalho__logo__ford"
+                    alt="Ford"
+                />
+            </a>
+            <input type="checkbox" id="menu-hamburguer" />
+            <label for="menu-hamburguer" class="cabecalho__menu__hamburguer">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
 
-      <nav class="cabecalho__menu" id="menu-navegacao">
-        <a href="index.html" class="cabecalho__menu__link" aria-current="page"
-          >HOME</a
-        >
-        <a href="launch.html" class="cabecalho__menu__link">LANÇAMENTO</a>
-        <a href="contact.html" class="cabecalho__menu__link">CONTATO</a>
-      </nav>
-    </header>
-    <main class="pagina">
-      <div id="carousel"></div>
-      <div id="carousel-title"></div>
-      <script>
-        //insert each image on carousel
-        carouselArr.push(
-          new Carousel(
-            "imagem_1.jpg",
-            "Esta é a nova Ranger Ford 2022. Equipada com motores turbo diesel, é reconhecida pela excelente capacidade off-road (imersão de até 800 mm), tração 4x4 com reduzida e alta conectividade através da central SYNC e do aplicativo FordPass Connect.",
-            "launch.html",
-          ),
-        );
-        carouselArr.push(
-          new Carousel("imagem_2.jpg", "Ford a nossa história", "launch.html"),
-        );
-        carouselArr.push(
-          new Carousel(
-            "imagem_3.jpg",
-            "Nova Ford Bronco Sport 2022",
-            "launch.html",
-          ),
-        );
-        Carousel.Start(carouselArr);
-      </script>
-    </main>
-    <footer class="rodape">
-      <!-- Nova div agrupando o texto e as redes sociais para ocupar a 1ª coluna do Grid -->
-      <div class="rodape__agrupamento-social">
-        <p class="rodape__texto">Redes Sociais:</p>
-        <div class="rodape__links">
-          <a
-            class="rodape__links__logo"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.instagram.com/fordbrasil/"
-          >
+            <nav class="cabecalho__menu" id="menu-navegacao">
+                <a
+                    href="index.html"
+                    class="cabecalho__menu__link"
+                    aria-current="page"
+                    >HOME</a
+                >
+                <a href="launch.html" class="cabecalho__menu__link"
+                    >LANÇAMENTO</a
+                >
+                <a href="contact.html" class="cabecalho__menu__link">CONTATO</a>
+            </nav>
+        </header>
+        <main class="pagina">
+            <div id="carousel"></div>
+            <div id="carousel-title"></div>
+            <script>
+                //insert each image on carousel
+                carouselArr.push(
+                    new Carousel(
+                        "imagem_1.jpg",
+                        "Esta é a nova Ranger Ford 2022. Equipada com motores turbo diesel, é reconhecida pela excelente capacidade off-road (imersão de até 800 mm), tração 4x4 com reduzida e alta conectividade através da central SYNC e do aplicativo FordPass Connect.",
+                        "launch.html",
+                    ),
+                );
+                carouselArr.push(
+                    new Carousel(
+                        "imagem_2.jpg",
+                        "Ford a nossa história",
+                        "launch.html",
+                    ),
+                );
+                carouselArr.push(
+                    new Carousel(
+                        "imagem_3.jpg",
+                        "Nova Ford Bronco Sport 2022",
+                        "launch.html",
+                    ),
+                );
+                Carousel.Start(carouselArr);
+            </script>
+        </main>
+        <footer class="rodape">
+            <!-- Nova div agrupando o texto e as redes sociais para ocupar a 1ª coluna do Grid -->
+            <div class="rodape__agrupamento-social">
+                <p class="rodape__texto">Redes Sociais:</p>
+                <div class="rodape__links">
+                    <a
+                        class="rodape__links__logo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.instagram.com/fordbrasil/"
+                    >
+                        <img
+                            src="img/instagram-logo-50.png"
+                            alt="Instagram"
+                            loading="lazy"
+                        />
+                    </a>
+                    <a
+                        class="rodape__links__logo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.youtube.com/fordbrasil"
+                    >
+                        <img
+                            src="img/youtube-squared-50.png"
+                            alt="YouTube"
+                            loading="lazy"
+                        />
+                    </a>
+                    <a
+                        class="rodape__links__logo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.facebook.com/FordBrasil/?locale=pt_BR"
+                    >
+                        <img
+                            src="img/facebook-50.png"
+                            alt="Facebook"
+                            loading="lazy"
+                        />
+                    </a>
+                </div>
+            </div>
+            <p class="rodape__copy">
+                Copyright &copy; 2026 Ford Motor Company - Todos os direitos
+                reservados
+            </p>
             <img
-              src="img/instagram-logo-50.png"
-              alt="Instagram"
-              loading="lazy"
+                class="rodape__ford__logo"
+                src="img/ford-96.png"
+                alt="Logo Ford"
+                loading="lazy"
             />
-          </a>
-          <a
-            class="rodape__links__logo"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.youtube.com/fordbrasil"
-          >
-            <img
-              src="img/youtube-squared-50.png"
-              alt="YouTube"
-              loading="lazy"
-            />
-          </a>
-          <a
-            class="rodape__links__logo"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.facebook.com/FordBrasil/?locale=pt_BR"
-          >
-            <img src="img/facebook-50.png" alt="Facebook" loading="lazy" />
-          </a>
-        </div>
-      </div>
-      <p class="rodape__copy">
-        Copyright &copy; 2026 Ford Motor Company - Todos os direitos reservados
-      </p>
-      <img
-        class="rodape__ford__logo"
-        src="img/ford-96.png"
-        alt="Logo Ford"
-        loading="lazy"
-      />
-    </footer>
-  </body>
+        </footer>
+    </body>
 </html>

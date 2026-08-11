@@ -17,8 +17,9 @@
         />
         <link rel="stylesheet" href="./css/reset.css" />
         <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/lancamento.css" />
+        <script src="js/compare.js"></script>
     </head>
-
     <body>
         <header class="cabecalho">
             <a href="index.html" class="cabecalho__logo">
@@ -92,7 +93,26 @@
                     <div class="pagina__fotos__legenda__linha">
                         <input
                             type="checkbox"
+                            value="car1"
                             class="pagina__fotos__checkbox"
+                            onchange="
+                                SetCarToCompare(
+                                    this,
+                                    new Car(
+                                        'XL Cabine Simples 2.2 Diesel 4X4 MT 2022',
+                                        183850,
+                                        511,
+                                        1821,
+                                        232,
+                                        1234,
+                                        2.2,
+                                        160,
+                                        1420,
+                                        'Aço Estampado 16',
+                                        'img/XL Cabine.jpg',
+                                    ),
+                                )
+                            "
                             id="check-xl"
                         />
                         <label for="check-xl" class="pagina__fotos__legenda"
@@ -123,6 +143,24 @@
                             type="checkbox"
                             class="pagina__fotos__checkbox"
                             id="check-xls"
+                            onchange="
+                                SetCarToCompare(
+                                    this,
+                                    new Car(
+                                        'XLS 2.2 Diesel 4X4 AT 2022',
+                                        220690,
+                                        511,
+                                        1821,
+                                        232,
+                                        1076,
+                                        2.2,
+                                        160,
+                                        1180,
+                                        'Aço Estampado 16',
+                                        'img/xls 2.2 diesel.jpg',
+                                    ),
+                                )
+                            "
                         />
                         <label for="check-xls" class="pagina__fotos__legenda"
                             ><strong class="pagina__fotos__legenda__destaque"
@@ -151,6 +189,24 @@
                             type="checkbox"
                             class="pagina__fotos__checkbox"
                             id="check-storm"
+                            onchange="
+                                SetCarToCompare(
+                                    this,
+                                    new Car(
+                                        'Storm 3.2 Diesel 4X4 AT 2022',
+                                        222790,
+                                        511,
+                                        1821,
+                                        232,
+                                        1040,
+                                        3.2,
+                                        200,
+                                        1180,
+                                        'Liga Leve 17',
+                                        'img/storm.jpg',
+                                    ),
+                                )
+                            "
                         />
                         <label for="check-storm" class="pagina__fotos__legenda"
                             ><strong class="pagina__fotos__legenda__destaque"
@@ -166,12 +222,11 @@
                     </div>
                 </li>
             </ul>
-            <button type="button" class="pagina__comparar">
+            <button type="button" class="pagina__comparar" onclick="ShowCompare()">
                 COMPARAR PREÇOS
             </button>
         </main>
         <footer class="rodape">
-            <!-- Nova div agrupando o texto e as redes sociais para ocupar a 1ª coluna do Grid -->
             <div class="rodape__agrupamento-social">
                 <p class="rodape__texto">Redes Sociais:</p>
                 <div class="rodape__links">
@@ -213,12 +268,12 @@
                     </a>
                 </div>
             </div>
-            <!-- 2ª Coluna -->
+        
             <p class="rodape__copy">
                 Copyright &copy; 2026 Ford Motor Company - Todos os direitos
                 reservados
             </p>
-            <!-- 3ª Coluna -->
+            
             <img
                 class="rodape__ford__logo"
                 src="img/ford-96.png"
@@ -226,5 +281,75 @@
                 loading="lazy"
             />
         </footer>
+        <div id="compare">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td id="compare_image_0"></td>
+                        <td id="compare_image_1"></td>
+                    </tr>
+                    <tr>
+                        <td>Modelo</td>
+                        <td id="compare_modelo_0"></td>
+                        <td id="compare_modelo_1"></td>
+                    </tr>
+                    <tr>
+                        <td>Altura da ca&ccedil;amba (mm)</td>
+                        <td id="compare_alturacacamba_0"></td>
+                        <td id="compare_alturacacamba_1"></td>
+                    </tr>
+                    <tr>
+                        <td>Altura do ve&iacute;culo (mm)</td>
+                        <td id="compare_alturaveiculo_0"></td>
+                        <td id="compare_alturaveiculo_1"></td>
+                    </tr>
+                    <tr>
+                        <td>Altura livre do solo (mm)</td>
+                        <td id="compare_alturasolo_0"></td>
+                        <td id="compare_alturasolo_1"></td>
+                    </tr>
+                    <tr>
+                        <td>Capacidade de carga (Kg)</td>
+                        <td id="compare_capacidadecarga_0"></td>
+                        <td id="compare_capacidadecarga_1"></td>
+                    </tr>
+                    <tr>
+                        <td>Motor</td>
+                        <td id="compare_motor_0"></td>
+                        <td id="compare_motor_1"></td>
+                    </tr>
+                    <tr>
+                        <td>Pot&ecirc;ncia (cv)</td>
+                        <td id="compare_potencia_0"></td>
+                        <td id="compare_potencia_1"></td>
+                    </tr>
+                    <tr>
+                        <td>Volume de ca&ccedil;amba (L)</td>
+                        <td id="compare_volumecacamba_0"></td>
+                        <td id="compare_volumecacamba_1"></td>
+                    </tr>
+                    <tr>
+                        <td>Roda</td>
+                        <td id="compare_roda_0"></td>
+                        <td id="compare_roda_1"></td>
+                    </tr>
+                    <tr>
+                        <td>Pre&ccedil;o</td>
+                        <td id="compare_preco_0"></td>
+                        <td id="compare_preco_1"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align: center; padding-bottom: 20px">
+                <button
+                    type="button"
+                    style="height: 40px; width: 200px"
+                    onclick="HideCompare()"
+                >
+                    Fechar
+                </button>
+            </div>
+        </div>
     </body>
 </html>

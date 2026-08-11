@@ -17,6 +17,7 @@
         />
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/style.css" />
+        <script src="js/form.js"></script>
     </head>
 
     <body>
@@ -58,7 +59,7 @@
                         Fale Conosco Ford Ranger 2022
                     </h1>
                     <h2>Fale Conosco</h2>
-                    <form id="form-contato">
+                    <form id="form-contato" onsubmit="return Post(this)">
                         <div class="contato__campo">
                             <label for="nome">Nome*</label>
                             <input
@@ -125,7 +126,6 @@
             </section>
         </main>
         <footer class="rodape">
-            <!-- Nova div agrupando o texto e as redes sociais para ocupar a 1ª coluna do Grid -->
             <div class="rodape__agrupamento-social">
                 <p class="rodape__texto">Redes Sociais:</p>
                 <div class="rodape__links">

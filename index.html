@@ -49,10 +49,13 @@
             </nav>
         </header>
         <main class="pagina">
-            <div id="carousel"></div>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="Carousel.Prev()">&#10094;</button>
+                <div id="carousel"></div>
+                <button class="carousel-btn next" onclick="Carousel.Next()">&#10095;</button>
+            </div>
             <div id="carousel-title"></div>
             <script>
-                //insert each image on carousel
                 carouselArr.push(
                     new Carousel(
                         "imagem_1.jpg",
@@ -63,14 +66,14 @@
                 carouselArr.push(
                     new Carousel(
                         "imagem_2.jpg",
-                        "Ford a nossa história",
+                        "A Ford Motor Company foi fundada por Henry Ford em 16 de junho de 1903, em Detroit, Michigan. A marca mudou o mundo ao criar o Fordismo, sistema de produção em massa que popularizou o automóvel com o icônico Modelo T em 1908, e construiu uma longa história de mais de um século no Brasil",
                         "launch.html",
                     ),
                 );
                 carouselArr.push(
                     new Carousel(
                         "imagem_3.jpg",
-                        "Nova Ford Bronco Sport 2022",
+                        "Nova Ford Bronco Sport 2022. Um SUV médio com forte apelo off-road. Vendido na versão topo de linha Wildtrak, ele traz motor 2.0 EcoBoost turbo, tração 4x4 inteligente com seletores de terreno (G.O.A.T. Modes), câmbio automático de 8 marchas e lista robusta de itens de conforto e segurança.",
                         "launch.html",
                     ),
                 );

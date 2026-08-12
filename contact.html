@@ -17,6 +17,7 @@
         />
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/style.css" />
+        <script src="js/form.js"></script>
     </head>
 
     <body>
@@ -58,21 +59,21 @@
                         Fale Conosco Ford Ranger 2022
                     </h1>
                     <h2>Fale Conosco</h2>
-                    <form id="form-contato">
+                    <form id="form-contato" onsubmit="return Post(this)">
                         <div class="contato__campo">
-                            <label for="nome">Nome*</label>
+                            <label for="nome">Nome</label>
                             <input
                                 type="text"
                                 id="nome"
                                 name="nome"
-                                placeholder="Digite seu nome completo"
+                                placeholder="Digite seu nome"
                                 required
                             />
                         </div>
                         <div class="contato__campo">
-                            <label for="email">E-mail*</label>
+                            <label for="email">E-mail</label>
                             <input
-                                type="email"
+                                type="text"
                                 id="email"
                                 name="email"
                                 placeholder="@gmail, @outlook ou @hotmail"
@@ -80,38 +81,54 @@
                             />
                         </div>
                         <div class="contato__campo">
-                            <label for="telefone">Telefone</label>
+                            <label for="telefone">CPF</label>
                             <input
-                                type="tel"
-                                id="telefone"
-                                name="telefone"
-                                placeholder="Digite seu telefone com DDD"
+                                type="text"
+                                id="cpf"
+                                name="cpf"
+                                inputmode="number"
+                                maxlength="14"
+                                oninput="MascararCpf(this)"
+                                placeholder="Digite seu CPF"
+                                required
                             />
                         </div>
                         <div class="contato__campo">
-                            <label for="tipo-contato">Tipo do contato*</label>
+                            <label for="sobrenome">Sobrenome</label>
+                            <input
+                                type="text"
+                                id="sobrenome"
+                                name="sobrenome"
+                                placeholder="Digite seu sobrenome"
+                                required
+                            />
+                        </div>
+                        <div class="contato__campo">
+                            <label for="telefone">Telefone</label>
+                            <input
+                                type="text"
+                                id="telefone"
+                                name="telefone"
+                                inputmode="number"
+                                maxlength="15"
+                                oninput="MascararTelefone(this)"
+                                placeholder="Digite seu telefone com DDD"
+                                required
+                            />
+                        </div>
+                        <div class="contato__campo">
+                            <label for="tipo-contato">Como deseja ser contatado?</label>
                             <select
                                 id="tipo-contato"
                                 name="tipo-contato"
                                 required
                             >
                                 <option value="" disabled selected>
-                                    Tipo do contato
+                                    Como deseja ser contatado?
                                 </option>
-                                <option>Elogio</option>
-                                <option>Reclamação</option>
-                                <option>Solicitação</option>
+                                <option>E-mail</option>
+                                <option>Telefone</option>
                             </select>
-                        </div>
-                        <div class="contato__campo">
-                            <label for="mensagem-texto">Mensagem*</label>
-                            <textarea
-                                id="mensagem-texto"
-                                name="mensagem-texto"
-                                rows="6"
-                                placeholder="Mensagem"
-                                required
-                            ></textarea>
                         </div>
                         <button type="submit">Enviar</button>
                         <p
@@ -125,7 +142,6 @@
             </section>
         </main>
         <footer class="rodape">
-            <!-- Nova div agrupando o texto e as redes sociais para ocupar a 1ª coluna do Grid -->
             <div class="rodape__agrupamento-social">
                 <p class="rodape__texto">Redes Sociais:</p>
                 <div class="rodape__links">

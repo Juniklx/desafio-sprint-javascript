@@ -29,6 +29,10 @@ class Car {
     }
 }
 
+<<<<<<< HEAD
+=======
+// search on array if exist carClass returning position, if not return -1
+>>>>>>> 8d975680525a7c669cb6ac67a549549b519cd974
 function GetCarArrPosition(arr, carClass) {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].nome === carClass.nome) return i;

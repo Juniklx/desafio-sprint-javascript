@@ -27,6 +27,8 @@ td {
     text-align: center;
     vertical-align: middle;
     padding: 8px;
+    font-size: 14px;
+    text-align: center;
 }
 
 td#compare_image_0 img, td#compare_image_1 img{
@@ -42,6 +44,7 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+<<<<<<< HEAD
 .closebutton {
     display: inline-flex;
     align-items: center;
@@ -85,4 +88,19 @@ tr:nth-child(even) {
     div#compare {
         top: 130%;
     }
+=======
+div#compare {
+    position: absolute;
+    display: none;
+    max-width: 450px;
+    min-width: 300px;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    border-radius: 10px;
+    padding: 10px;
+    -webkit-box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
+    box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
+>>>>>>> 8d975680525a7c669cb6ac67a549549b519cd974
 }

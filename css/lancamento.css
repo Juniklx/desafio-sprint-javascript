@@ -44,7 +44,7 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.closebutton {
+.modal__close-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -65,13 +65,13 @@ tr:nth-child(even) {
         box-shadow var(--transition-rapida);
 }
 
-.closebutton:hover {
+.modal__close-button:hover {
     background: var(--cor-azul-escuro);
     box-shadow: 0 6px 18px rgba(0, 52, 120, 0.45);
     transform: translateY(-3px);
 }
 
-.closebutton:active {
+.modal__close-button:active {
     box-shadow: 0 3px 8px rgba(0, 52, 120, 0.4);
     transform: translateY(-1px);
 }

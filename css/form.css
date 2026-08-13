@@ -1,4 +1,4 @@
-.contato__formulario {
+.contact-form {
     width: 30%;
     background: var(--cor-branca);
     border-radius: 18px;
@@ -6,7 +6,7 @@
     margin: 2rem 0;
 }
 
-.contato__formulario h2 {
+.contact-form h2 {
     padding: 2rem;
     color: var(--cor-azul);
     font-size: 2rem;
@@ -14,25 +14,25 @@
     text-align: center;
 }
 
-.contato__formulario p {
+.contact-form p {
     margin-bottom: 1.875rem;
     color: #777;
 }
 
-.contato__formulario form {
+.contact-form form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 0 2.5rem 2.5rem;
 }
 
-.contato__formulario label {
+.contact-form label {
     font-size: 0.95rem;
     font-weight: 600;
     color: #222;
 }
 
-.contato__formulario :is(input, select, textarea) {
+.contact-form :is(input, select, textarea) {
     padding: 1rem 1.125rem;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -41,17 +41,17 @@
     transition: var(--transition);
 }
 
-.contato__formulario :is(input, select, textarea):focus {
+.contact-form :is(input, select, textarea):focus {
     outline: none;
     border-color: var(--cor-azul);
     box-shadow: 0 0 10px rgba(0, 52, 120, 0.3);
 }
 
-.contato__formulario textarea {
+.contact-form textarea {
     resize: vertical;
 }
 
-.contato__formulario button {
+.contact-form button {
     padding: 1rem;
     background: var(--cor-azul);
     color: var(--cor-branca);
@@ -63,14 +63,14 @@
     transition: var(--transition);
 }
 
-.contato__formulario button:hover {
+.contact-form button:hover {
     background: var(--cor-botao-hover);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
     transform: translateY(-3px);
 }
 
 @media (max-width: 1200px) {
-    .contato__formulario {
+    .contact-form {
         width: 100%;
         margin-bottom: 3rem;
     }

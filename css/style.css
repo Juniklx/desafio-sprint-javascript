@@ -22,7 +22,7 @@ html {
     font-family: "Inter", sans-serif;
 }
 
-.carousel-container {
+.carousel__viewport {
     display: flex;
     justify-content: center;
     position: relative;
@@ -30,7 +30,7 @@ html {
     overflow: hidden;
 }
 
-.carousel-btn {
+.carousel__button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -50,7 +50,7 @@ html {
     border-radius: 0 0 1rem 1rem;
 }
 
-#carousel .carousel-slide {
+#carousel .carousel__slide {
     position: absolute;
     inset: 0;
     display: block;
@@ -58,21 +58,21 @@ html {
     transition: opacity 300ms ease-in-out;
 }
 
-#carousel .carousel-slide.is-visible {
+#carousel .carousel__slide.carousel__slide--active {
     opacity: 1;
 }
 
-#carousel .carousel-slide img {
+#carousel .carousel__slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.carousel__button--prev { left: 10px; }
+.carousel__button--next { right: 10px; }
 
-.carousel-btn:hover {
+.carousel__button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -135,7 +135,7 @@ button:focus-visible {
     border: 0;
 }
 
-.cabecalho {
+.header {
     position: relative;
     z-index: 100;
     display: grid;
@@ -147,7 +147,7 @@ button:focus-visible {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 }
 
-.cabecalho__logo {
+.header__logo {
     display: flex;
     align-items: center;
     justify-self: start;
@@ -155,7 +155,7 @@ button:focus-visible {
     text-decoration: none;
 }
 
-.cabecalho__logo__ford {
+.header__logo-image {
     width: 6rem;
     flex-shrink: 0;
 }
@@ -164,11 +164,11 @@ button:focus-visible {
     display: none;
 }
 
-.cabecalho__menu__hamburguer {
+.header__nav-toggle {
     display: none;
 }
 
-.cabecalho__menu {
+.header__nav {
     display: flex;
     align-items: center;
     justify-self: center;
@@ -178,7 +178,7 @@ button:focus-visible {
     font-size: 0.9rem;
 }
 
-.cabecalho__menu__link {
+.header__nav-link {
     position: relative;
     display: inline-block;
     color: var(--cor-azul-escuro);
@@ -189,7 +189,7 @@ button:focus-visible {
     transition: color var(--transition);
 }
 
-.cabecalho__menu__link::after {
+.header__nav-link::after {
     content: "";
     position: absolute;
     left: 0;
@@ -202,16 +202,16 @@ button:focus-visible {
     transition: transform var(--transition);
 }
 
-.cabecalho__menu__link:hover {
+.header__nav-link:hover {
     color: var(--cor-azul);
 }
 
-.cabecalho__menu__link:hover::after {
+.header__nav-link:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
 
-.pagina {
+.page {
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
@@ -222,25 +222,25 @@ button:focus-visible {
     transition: var(--transition);
 }
 
-.pagina__video {
+.page__video {
     display: flex;
     justify-content: center;
     width: 100%;
     background: #000;
 }
 
-.pagina__video__ranger {
+.page__video-player {
     width: 55%;
     aspect-ratio: 16 / 9;
 }
 
-.pagina__video__ranger iframe {
+.page__video-player iframe {
     width: 100%;
     height: 100%;
     border: 0;
 }
 
-.pagina__texto {
+.page__text {
     width: 55%;
     margin: 2rem 0;
     font-size: 0.8rem;
@@ -248,8 +248,8 @@ button:focus-visible {
     text-align: center;
 }
 
-.botao__ranger,
-.pagina__comparar {
+.btn--hero,
+.btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -272,30 +272,30 @@ button:focus-visible {
         box-shadow var(--transition-rapida);
 }
 
-.botao__ranger {
+.btn--hero {
     margin-bottom: 3rem;
 }
 
-.botao__ranger:hover,
-.pagina__comparar:hover {
+.btn--hero:hover,
+.btn:hover {
     background: var(--cor-azul-escuro);
     box-shadow: 0 6px 18px rgba(0, 52, 120, 0.45);
     transform: translateY(-3px);
 }
 
-.botao__ranger:active,
-.pagina__comparar:active {
+.btn--hero:active,
+.btn:active {
     box-shadow: 0 3px 8px rgba(0, 52, 120, 0.4);
     transform: translateY(-1px);
 }
 
-body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
+body:has(#menu-hamburguer:checked) :is(.page, .footer) {
     filter: blur(8px);
     pointer-events: none;
     user-select: none;
 }
 
-.pagina__fotos {
+.gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -304,20 +304,20 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
     padding: 0 0 3rem 0;
 }
 
-.pagina__fotos__item {
+.gallery__item {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 20%;
 }
 
-.pagina__fotos__carros {
+.gallery__image {
     width: 100%;
     border-radius: 8px;
     cursor: pointer;
 }
 
-.pagina__fotos__legenda__linha {
+.gallery__caption-row {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -325,7 +325,7 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
     padding-top: 1rem;
 }
 
-.pagina__fotos__checkbox {
+.gallery__checkbox {
     flex: 0 0 auto;
     width: 1.4rem;
     height: 1.4rem;
@@ -333,7 +333,7 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
     cursor: pointer;
 }
 
-.pagina__fotos__legenda {
+.gallery__caption {
     flex: 0 1 auto;
     margin: 0 0.7rem;
     font-size: 0.8rem;
@@ -342,17 +342,17 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
     cursor: pointer;
 }
 
-.pagina__fotos__legenda__destaque {
+.gallery__caption--highlight {
     font-weight: 600;
     color: var(--cor-azul);
 }
 
-.pagina__fotos__info {
+.gallery__info {
     width: 1.5rem;
     flex-shrink: 0;
 }
 
-.contato {
+.contact {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -360,21 +360,21 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
     gap: 5rem;
 }
 
-.contato__imagem {
+.contact__image {
     width: 40%;
 }
 
-.contato__imagem img {
+.contact__image img {
     width: 100%;
 }
 
-.contato__campo {
+.contact__fields {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.rodape {
+.footer {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
@@ -385,36 +385,36 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.35);
 }
 
-.rodape__agrupamento-social {
+.footer__social {
     display: flex;
     align-items: center;
     gap: 0.8rem;
     justify-self: start;
 }
 
-.rodape__texto {
+.footer__text {
     margin: 0;
     color: var(--cor-branca);
     font-size: 0.9rem;
     font-weight: 500;
 }
 
-.rodape__links {
+.footer__links {
     display: flex;
     align-items: center;
     gap: 0.8rem;
 }
 
-.rodape__links__logo {
+.footer__links-logo {
     display: flex;
     justify-content: center;
 }
 
-.rodape__links__logo img {
+.footer__links-logo img {
     width: 2.5rem;
 }
 
-.rodape__copy {
+.footer__copyright {
     margin: 0;
     color: var(--cor-branca);
     font-size: 0.9rem;
@@ -423,25 +423,25 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
     justify-self: center;
 }
 
-.rodape__ford__logo {
+.footer__logo {
     width: 4.375rem;
     justify-self: end;
 }
 
-.rodape a:focus-visible {
+.footer a:focus-visible {
     outline-color: var(--cor-branca);
 }
 
 @media (max-width: 1200px) {
-    .pagina {
+    .page {
         gap: 0rem;
     }
 
-    .cabecalho__menu {
+    .header__nav {
         gap: 2rem;
     }
 
-    .pagina__fotos__item {
+    .gallery__item {
         width: 20%;
     }
 
@@ -453,18 +453,18 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
         border-radius: 0;
     }
 
-    .pagina__texto {
+    .page__text {
         width: 80%;
         font-size: 0.8rem;
     }
 
-    .pagina__video {
+    .page__video {
         width: 100%;
         aspect-ratio: 4 / 2;
         overflow: hidden;
     }
 
-    .pagina__video iframe {
+    .page__video iframe {
         width: 100%;
         height: 100%;
         transform: scale(1.9);
@@ -472,27 +472,27 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
         border: 0;
     }
 
-    .botao__ranger {
+    .btn--hero {
         margin-bottom: 5rem;
     }
 
-    .contato {
+    .contact {
         flex-direction: column;
         width: 70%;
         gap: 0;
     }
 
-    .contato__imagem {
+    .contact__image {
         display: flex;
         width: 100%;
         justify-content: center;
     }
 
-    .contato__imagem img {
+    .contact__image img {
         width: 80%;
     }
 
-    .rodape {
+    .footer {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -500,24 +500,24 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
         padding: 1.5rem 1rem;
     }
 
-    .rodape__agrupamento-social {
+    .footer__social {
         flex-direction: column;
         gap: 0.5rem;
     }
 
-    .rodape__ford__logo {
+    .footer__logo {
         margin-top: 0.5rem;
     }
 }
 
 @media (max-width: 480px) {
-    .cabecalho {
+    .header {
         display: flex;
         justify-content: space-between;
         height: 4rem;
     }
 
-    .cabecalho__menu {
+    .header__nav {
         gap: 0;
         display: flex;
         flex-direction: column;
@@ -539,11 +539,11 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
             visibility 0s linear 0.35s;
     }
 
-    .cabecalho__logo__ford {
+    .header__logo-image {
         width: 4.5rem;
     }
 
-    .cabecalho__menu__hamburguer {
+    .header__nav-toggle {
         display: flex;
         font-size: 1.5rem;
         cursor: pointer;
@@ -555,7 +555,7 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
         transform: translateY(-50%) scaleX(1.2);
     }
 
-    .cabecalho__menu__hamburguer span {
+    .header__nav-toggle span {
         display: flex;
         width: 2rem;
         height: 0.3rem;
@@ -567,7 +567,7 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
             opacity var(--transition);
     }
 
-    #menu-hamburguer:checked + .cabecalho__menu__hamburguer + .cabecalho__menu {
+    #menu-hamburguer:checked + .header__nav-toggle + .header__nav {
         max-height: 350px;
         opacity: 1;
         visibility: visible;
@@ -576,17 +576,17 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
         transition-delay: 0s;
     }
 
-    #menu-hamburguer:checked + .cabecalho__menu__hamburguer span:nth-child(1) {
+    #menu-hamburguer:checked + .header__nav-toggle span:nth-child(1) {
         transform: translateY(9.5px) rotate(45deg);
     }
-    #menu-hamburguer:checked + .cabecalho__menu__hamburguer span:nth-child(2) {
+    #menu-hamburguer:checked + .header__nav-toggle span:nth-child(2) {
         opacity: 0;
     }
-    #menu-hamburguer:checked + .cabecalho__menu__hamburguer span:nth-child(3) {
+    #menu-hamburguer:checked + .header__nav-toggle span:nth-child(3) {
         transform: translateY(-9.5px) rotate(-45deg);
     }
 
-    .cabecalho__menu__link {
+    .header__nav-link {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -595,11 +595,11 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
         border-bottom: 2px solid #f0f4f8;
     }
 
-    .pagina {
+    .page {
         gap: 1rem;
     }
 
-    .carousel-container {
+    .carousel__viewport {
         display: flex;
         justify-content: center;
     }
@@ -609,18 +609,18 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
         width: 90%;
     }
 
-    .pagina__ranger__link {
+    .page__video-link {
         width: 100%;
         border-radius: 0;
     }
 
-    .pagina__video {
+    .page__video {
         width: 95%;
         aspect-ratio: 9 / 16;
         overflow: hidden;
     }
 
-    .pagina__video iframe {
+    .page__video iframe {
         width: 100%;
         height: 100%;
         transform: scale(5.8);
@@ -628,21 +628,21 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
         border: 0;
     }
 
-    .pagina__texto {
+    .page__text {
         width: 85%;
         margin: 0;
     }
 
-    .contato {
+    .contact {
         width: 90%;
     }
 
-    .contato__imagem img {
+    .contact__image img {
         width: 80%;
     }
 
-    .botao__ranger,
-    .pagina__comparar {
+    .btn--hero,
+    .btn {
         display: block;
         width: 80%;
         margin-bottom: 6rem;
@@ -650,20 +650,20 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
         text-align: center;
     }
 
-    .pagina__fotos__legenda {
+    .gallery__caption {
         font-size: 0.8rem;
     }
 
-    .pagina__fotos__info {
+    .gallery__info {
         width: 8%;
     }
 
-    .pagina__fotos__item {
+    .gallery__item {
         width: 60%;
     }
 
-    .rodape__texto,
-    .rodape__copy {
+    .footer__text,
+    .footer__copyright {
         font-size: 0.8rem;
     }
 }

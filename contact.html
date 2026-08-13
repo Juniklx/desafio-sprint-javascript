@@ -22,46 +22,46 @@
     </head>
 
     <body>
-        <header class="cabecalho">
-            <a href="index.html" class="cabecalho__logo">
+        <header class="header">
+            <a href="index.html" class="header__logo">
                 <img
                     src="img/logo-ford-256.png"
-                    class="cabecalho__logo__ford"
+                    class="header__logo-image"
                     alt="Ford"
                 />
             </a>
             <input type="checkbox" id="menu-hamburguer" />
-            <label for="menu-hamburguer" class="cabecalho__menu__hamburguer">
+            <label for="menu-hamburguer" class="header__nav-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <nav class="cabecalho__menu" id="menu-navegacao">
-                <a href="index.html" class="cabecalho__menu__link">HOME</a>
-                <a href="launch.html" class="cabecalho__menu__link"
+            <nav class="header__nav" id="menu-navegacao">
+                <a href="index.html" class="header__nav-link">HOME</a>
+                <a href="launch.html" class="header__nav-link"
                     >LANÇAMENTO</a
                 >
                 <a
                     href="contact.html"
-                    class="cabecalho__menu__link"
+                    class="header__nav-link"
                     aria-current="page"
                     >CONTATO</a
                 >
             </nav>
         </header>
-        <main class="pagina">
-            <section class="contato" aria-labelledby="contato-titulo">
-                <div class="contato__imagem">
+        <main class="page">
+            <section class="contact" aria-labelledby="contato-titulo">
+                <div class="contact__image">
                     <img src="img/storm.jpg" alt="Ford Ranger" />
                 </div>
-                <div class="contato__formulario">
+                <div class="contact-form">
                     <h1 id="contato-titulo" class="sr-only">
                         Fale Conosco Ford Ranger 2022
                     </h1>
                     <h2>Fale Conosco</h2>
                     <form id="form-contato" onsubmit="return submitContactForm(this)">
-                        <div class="contato__campo">
+                        <div class="contact__fields">
                             <label for="nome">Nome</label>
                             <input
                                 type="text"
@@ -71,7 +71,7 @@
                                 required
                             />
                         </div>
-                        <div class="contato__campo">
+                        <div class="contact__fields">
                             <label for="email">E-mail</label>
                             <input
                                 type="text"
@@ -81,7 +81,7 @@
                                 required
                             />
                         </div>
-                        <div class="contato__campo">
+                        <div class="contact__fields">
                             <label for="cpf">CPF</label>
                             <input
                                 type="text"
@@ -94,7 +94,7 @@
                                 required
                             />
                         </div>
-                        <div class="contato__campo">
+                        <div class="contact__fields">
                             <label for="sobrenome">Sobrenome</label>
                             <input
                                 type="text"
@@ -104,7 +104,7 @@
                                 required
                             />
                         </div>
-                        <div class="contato__campo">
+                        <div class="contact__fields">
                             <label for="telefone">Telefone</label>
                             <input
                                 type="text"
@@ -117,7 +117,7 @@
                                 required
                             />
                         </div>
-                        <div class="contato__campo">
+                        <div class="contact__fields">
                             <label for="tipo-contato">Como deseja ser contatado?</label>
                             <select
                                 id="tipo-contato"
@@ -134,7 +134,7 @@
                         <button type="submit">Enviar</button>
                         <p
                             id="mensagem"
-                            class="mensagem"
+                            class="form__feedback"
                             role="status"
                             aria-live="polite"
                         ></p>
@@ -142,12 +142,12 @@
                 </div>
             </section>
         </main>
-        <footer class="rodape">
-            <div class="rodape__agrupamento-social">
-                <p class="rodape__texto">Redes Sociais:</p>
-                <div class="rodape__links">
+        <footer class="footer">
+            <div class="footer__social">
+                <p class="footer__text">Redes Sociais:</p>
+                <div class="footer__links">
                     <a
-                        class="rodape__links__logo"
+                        class="footer__links-logo"
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.instagram.com/fordbrasil/"
@@ -159,7 +159,7 @@
                         />
                     </a>
                     <a
-                        class="rodape__links__logo"
+                        class="footer__links-logo"
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.youtube.com/fordbrasil"
@@ -171,7 +171,7 @@
                         />
                     </a>
                     <a
-                        class="rodape__links__logo"
+                        class="footer__links-logo"
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.facebook.com/FordBrasil/?locale=pt_BR"
@@ -185,13 +185,13 @@
                 </div>
             </div>
 
-            <p class="rodape__copy">
+            <p class="footer__copyright">
                 Copyright &copy; 2026 Ford Motor Company - Todos os direitos
                 reservados
             </p>
 
             <img
-                class="rodape__ford__logo"
+                class="footer__logo"
                 src="img/ford-96.png"
                 alt="Logo Ford"
                 loading="lazy"

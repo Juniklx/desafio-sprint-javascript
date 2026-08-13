@@ -69,7 +69,7 @@ function hideCompare() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".pagina__fotos__checkbox").forEach((checkbox) => {
+    document.querySelectorAll(".gallery__checkbox").forEach((checkbox) => {
         checkbox.checked = false;
     });
     vehiclesToCompare = [];

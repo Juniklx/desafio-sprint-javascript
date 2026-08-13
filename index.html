@@ -20,39 +20,39 @@
         <script src="js/carousel.js"></script>
     </head>
     <body>
-        <header class="cabecalho">
-            <a href="index.html" class="cabecalho__logo">
+        <header class="header">
+            <a href="index.html" class="header__logo">
                 <img
                     src="img/logo-ford-256.png"
-                    class="cabecalho__logo__ford"
+                    class="header__logo-image"
                     alt="Ford"
                 />
             </a>
             <input type="checkbox" id="menu-hamburguer" />
-            <label for="menu-hamburguer" class="cabecalho__menu__hamburguer">
+            <label for="menu-hamburguer" class="header__nav-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <nav class="cabecalho__menu" id="menu-navegacao">
+            <nav class="header__nav" id="menu-navegacao">
                 <a
                     href="index.html"
-                    class="cabecalho__menu__link"
+                    class="header__nav-link"
                     aria-current="page"
                     >HOME</a
                 >
-                <a href="launch.html" class="cabecalho__menu__link"
+                <a href="launch.html" class="header__nav-link"
                     >LANÇAMENTO</a
                 >
-                <a href="contact.html" class="cabecalho__menu__link">CONTATO</a>
+                <a href="contact.html" class="header__nav-link">CONTATO</a>
             </nav>
         </header>
-        <main class="pagina">
-            <div class="carousel-container">
-                <button class="carousel-btn prev" onclick="Carousel.prev()" aria-label="Imagem anterior">&#10094;</button>
+        <main class="page">
+            <div class="carousel__viewport">
+                <button class="carousel__button carousel__button--prev" onclick="Carousel.prev()" aria-label="Imagem anterior">&#10094;</button>
                 <div id="carousel"></div>
-                <button class="carousel-btn next" onclick="Carousel.next()" aria-label="Próxima imagem">&#10095;</button>
+                <button class="carousel__button carousel__button--next" onclick="Carousel.next()" aria-label="Próxima imagem">&#10095;</button>
             </div>
             <div id="carousel-title"></div>
             <script>
@@ -80,13 +80,13 @@
                 Carousel.start(carouselArr);
             </script>
         </main>
-        <footer class="rodape">
+        <footer class="footer">
 
-            <div class="rodape__agrupamento-social">
-                <p class="rodape__texto">Redes Sociais:</p>
-                <div class="rodape__links">
+            <div class="footer__social">
+                <p class="footer__text">Redes Sociais:</p>
+                <div class="footer__links">
                     <a
-                        class="rodape__links__logo"
+                        class="footer__links-logo"
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.instagram.com/fordbrasil/"
@@ -98,7 +98,7 @@
                         />
                     </a>
                     <a
-                        class="rodape__links__logo"
+                        class="footer__links-logo"
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.youtube.com/fordbrasil"
@@ -110,7 +110,7 @@
                         />
                     </a>
                     <a
-                        class="rodape__links__logo"
+                        class="footer__links-logo"
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.facebook.com/FordBrasil/?locale=pt_BR"
@@ -123,12 +123,12 @@
                     </a>
                 </div>
             </div>
-            <p class="rodape__copy">
+            <p class="footer__copyright">
                 Copyright &copy; 2026 Ford Motor Company - Todos os direitos
                 reservados
             </p>
             <img
-                class="rodape__ford__logo"
+                class="footer__logo"
                 src="img/ford-96.png"
                 alt="Logo Ford"
                 loading="lazy"

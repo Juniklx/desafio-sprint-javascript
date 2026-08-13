@@ -45,19 +45,19 @@ class Carousel {
 
         const novoSlide = document.createElement("a");
         novoSlide.href = item.link;
-        novoSlide.className = "carousel-slide";
+        novoSlide.className = "carousel__slide";
         novoSlide.innerHTML = `<img src="img/${item.image}" alt="${item.description}">`;
         carousel.appendChild(novoSlide);
 
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-                novoSlide.classList.add("is-visible");
+                novoSlide.classList.add("carousel__slide--active");
             });
         });
 
-        carousel.querySelectorAll(".carousel-slide").forEach((slide) => {
+        carousel.querySelectorAll(".carousel__slide").forEach((slide) => {
             if (slide === novoSlide) return;
-            slide.classList.remove("is-visible");
+            slide.classList.remove("carousel__slide--active");
             const remover = () => slide.remove();
             slide.addEventListener("transitionend", remover, { once: true });
             setTimeout(remover, 400);

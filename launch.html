@@ -21,36 +21,36 @@
         <script src="js/compare.js"></script>
     </head>
     <body>
-        <header class="cabecalho">
-            <a href="index.html" class="cabecalho__logo">
+        <header class="header">
+            <a href="index.html" class="header__logo">
                 <img
                     src="img/logo-ford-256.png"
-                    class="cabecalho__logo__ford"
+                    class="header__logo-image"
                     alt="Ford"
                 />
             </a>
             <input type="checkbox" id="menu-hamburguer" />
-            <label for="menu-hamburguer" class="cabecalho__menu__hamburguer">
+            <label for="menu-hamburguer" class="header__nav-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <nav class="cabecalho__menu" id="menu-navegacao">
-                <a href="index.html" class="cabecalho__menu__link">HOME</a>
+            <nav class="header__nav" id="menu-navegacao">
+                <a href="index.html" class="header__nav-link">HOME</a>
                 <a
                     href="launch.html"
-                    class="cabecalho__menu__link"
+                    class="header__nav-link"
                     aria-current="page"
                     >LANÇAMENTO</a
                 >
-                <a href="contact.html" class="cabecalho__menu__link">CONTATO</a>
+                <a href="contact.html" class="header__nav-link">CONTATO</a>
             </nav>
         </header>
-        <main class="pagina">
+        <main class="page">
             <h1 class="sr-only">Lançamento Ford Ranger 2022</h1>
-            <div class="pagina__video">
-                <div class="pagina__video__ranger">
+            <div class="page__video">
+                <div class="page__video-player">
                     <iframe
                         src="https://www.youtube.com/embed/vQsryuNmsL0?autoplay=1&mute=1&controls=0&loop=1&playlist=vQsryuNmsL0&rel=0&modestbranding=1"
                         title="Vídeo de lançamento da Ford Ranger 2022"
@@ -69,7 +69,7 @@
                     </iframe>
                 </div>
             </div>
-            <p class="pagina__texto">
+            <p class="page__text">
                 A Ford Ranger 2022 destaca-se pelos motores a diesel 2.2 de 160
                 cv e 3.2 de 200 cv com tração 4x4. Suas versões variam da XL
                 voltada ao trabalho até a topo de linha Limited, equipada com
@@ -80,21 +80,21 @@
                 ideal para quem busca o equilíbrio perfeito entre tecnologia,
                 segurança e robustez para o dia a dia.
             </p>
-            <ul class="pagina__fotos">
-                <li class="pagina__fotos__item">
-                    <label for="check-xl" class="pagina__fotos__foto__link">
+            <ul class="gallery">
+                <li class="gallery__item">
+                    <label for="check-xl" class="gallery__link">
                         <img
-                            class="pagina__fotos__carros"
+                            class="gallery__image"
                             src="img/xl-cabine.jpg"
                             alt="Ford Ranger XL Cabine Simples"
                             loading="lazy"
                         />
                     </label>
-                    <div class="pagina__fotos__legenda__linha">
+                    <div class="gallery__caption-row">
                         <input
                             type="checkbox"
                             value="car1"
-                            class="pagina__fotos__checkbox"
+                            class="gallery__checkbox"
                             autocomplete="off"
                             onchange="
                                 setVehicleToCompare(
@@ -116,33 +116,33 @@
                             "
                             id="check-xl"
                         />
-                        <label for="check-xl" class="pagina__fotos__legenda"
-                            ><strong class="pagina__fotos__legenda__destaque"
+                        <label for="check-xl" class="gallery__caption"
+                            ><strong class="gallery__caption--highlight"
                                 >XL Cabine Simples 2.2 Diesel 4X4 MT
                                 2022.</strong
                             ><br />Preço Sugerido: R$ 183.850,00</label
                         >
                         <img
-                            class="pagina__fotos__info"
+                            class="gallery__info"
                             src="img/info.png"
                             alt="Mais informações"
                             loading="lazy"
                         />
                     </div>
                 </li>
-                <li class="pagina__fotos__item">
-                    <label for="check-xls" class="pagina__fotos__foto__link">
+                <li class="gallery__item">
+                    <label for="check-xls" class="gallery__link">
                         <img
-                            class="pagina__fotos__carros"
+                            class="gallery__image"
                             src="img/xls-2.2-diesel.jpg"
                             alt="Ford Ranger XLS"
                             loading="lazy"
                         />
                     </label>
-                    <div class="pagina__fotos__legenda__linha">
+                    <div class="gallery__caption-row">
                         <input
                             type="checkbox"
-                            class="pagina__fotos__checkbox"
+                            class="gallery__checkbox"
                             id="check-xls"
                             autocomplete="off"
                             onchange="
@@ -164,32 +164,32 @@
                                 )
                             "
                         />
-                        <label for="check-xls" class="pagina__fotos__legenda"
-                            ><strong class="pagina__fotos__legenda__destaque"
+                        <label for="check-xls" class="gallery__caption"
+                            ><strong class="gallery__caption--highlight"
                                 >XLS 2.2 Diesel 4X4 AT 2022.</strong
                             ><br />Preço Sugerido: R$ 220.690,00</label
                         >
                         <img
-                            class="pagina__fotos__info"
+                            class="gallery__info"
                             src="img/info.png"
                             alt="Mais informações"
                             loading="lazy"
                         />
                     </div>
                 </li>
-                <li class="pagina__fotos__item">
-                    <label for="check-storm" class="pagina__fotos__foto__link">
+                <li class="gallery__item">
+                    <label for="check-storm" class="gallery__link">
                         <img
-                            class="pagina__fotos__carros"
+                            class="gallery__image"
                             src="img/storm.jpg"
                             alt="Ford Ranger Storm"
                             loading="lazy"
                         />
                     </label>
-                    <div class="pagina__fotos__legenda__linha">
+                    <div class="gallery__caption-row">
                         <input
                             type="checkbox"
-                            class="pagina__fotos__checkbox"
+                            class="gallery__checkbox"
                             id="check-storm"
                             autocomplete="off"
                             onchange="
@@ -211,13 +211,13 @@
                                 )
                             "
                         />
-                        <label for="check-storm" class="pagina__fotos__legenda"
-                            ><strong class="pagina__fotos__legenda__destaque"
+                        <label for="check-storm" class="gallery__caption"
+                            ><strong class="gallery__caption--highlight"
                                 >Storm 3.2 Diesel 4X4 AT 2022.</strong
                             ><br />Preço Sugerido: R$ 222.790,00</label
                         >
                         <img
-                            class="pagina__fotos__info"
+                            class="gallery__info"
                             src="img/info.png"
                             alt="Mais informações"
                             loading="lazy"
@@ -225,16 +225,16 @@
                     </div>
                 </li>
             </ul>
-            <button type="button" class="pagina__comparar" onclick="showCompare()">
+            <button type="button" class="btn" onclick="showCompare()">
                 COMPARAR PREÇOS
             </button>
         </main>
-        <footer class="rodape">
-            <div class="rodape__agrupamento-social">
-                <p class="rodape__texto">Redes Sociais:</p>
-                <div class="rodape__links">
+        <footer class="footer">
+            <div class="footer__social">
+                <p class="footer__text">Redes Sociais:</p>
+                <div class="footer__links">
                     <a
-                        class="rodape__links__logo"
+                        class="footer__links-logo"
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.instagram.com/fordbrasil/"
@@ -246,7 +246,7 @@
                         />
                     </a>
                     <a
-                        class="rodape__links__logo"
+                        class="footer__links-logo"
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.youtube.com/fordbrasil"
@@ -258,7 +258,7 @@
                         />
                     </a>
                     <a
-                        class="rodape__links__logo"
+                        class="footer__links-logo"
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.facebook.com/FordBrasil/?locale=pt_BR"
@@ -272,13 +272,13 @@
                 </div>
             </div>
         
-            <p class="rodape__copy">
+            <p class="footer__copyright">
                 Copyright &copy; 2026 Ford Motor Company - Todos os direitos
                 reservados
             </p>
             
             <img
-                class="rodape__ford__logo"
+                class="footer__logo"
                 src="img/ford-96.png"
                 alt="Logo Ford"
                 loading="lazy"
@@ -349,7 +349,7 @@
                     type="button"
                     style="height: 40px; width: 200px"
                     onclick="hideCompare()"
-                    class="closebutton"
+                    class="modal__close-button"
                 >
                     Fechar
                 </button>

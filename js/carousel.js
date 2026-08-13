@@ -1,48 +1,52 @@
 let carouselArr = [];
 
 class Carousel {
-    constructor(imagem, titulo, link) {
-        this.imagem = imagem;
-        this.titulo = titulo;
+    static #sequence = 0;
+    static #size = 0;
+    static #interval = null;
+
+    constructor(image, description, link) {
+        this.image = image;
+        this.description = description;
         this.link = link;
     }
 
-    static Start(arr) {
+    static start(arr) {
         if (!arr || arr.length === 0) {
-            throw "O método Start precisa de uma Array disponível.";
+            throw "O método start precisa de uma Array disponível.";
         }
         carouselArr = arr;
-        Carousel._sequence = 0;
-        Carousel._size = arr.length;
-        Carousel.UpdateView();
+        Carousel.#sequence = 0;
+        Carousel.#size = arr.length;
+        Carousel.updateView();
     }
 
-    static ResetInterval() {
-        if (Carousel._interval) clearInterval(Carousel._interval);
-        Carousel._interval = setInterval(() => {
-            Carousel.Next();
+    static resetInterval() {
+        if (Carousel.#interval) clearInterval(Carousel.#interval);
+        Carousel.#interval = setInterval(() => {
+            Carousel.next();
         }, 5000);
     }
 
-    static Next() {
-        Carousel._sequence = (Carousel._sequence + 1) % Carousel._size;
-        Carousel.UpdateView();
+    static next() {
+        Carousel.#sequence = (Carousel.#sequence + 1) % Carousel.#size;
+        Carousel.updateView();
     }
 
-    static Prev() {
-        Carousel._sequence = (Carousel._sequence - 1 + Carousel._size) % Carousel._size;
-        Carousel.UpdateView();
+    static prev() {
+        Carousel.#sequence = (Carousel.#sequence - 1 + Carousel.#size) % Carousel.#size;
+        Carousel.updateView();
     }
 
-    static UpdateView() {
+    static updateView() {
         const carousel = document.getElementById("carousel");
         const title = document.getElementById("carousel-title");
-        const item = carouselArr[Carousel._sequence];
+        const item = carouselArr[Carousel.#sequence];
 
         const novoSlide = document.createElement("a");
         novoSlide.href = item.link;
         novoSlide.className = "carousel-slide";
-        novoSlide.innerHTML = `<img src="img/${item.imagem}" alt="${item.titulo}">`;
+        novoSlide.innerHTML = `<img src="img/${item.image}" alt="${item.description}">`;
         carousel.appendChild(novoSlide);
 
         requestAnimationFrame(() => {
@@ -59,10 +63,8 @@ class Carousel {
             setTimeout(remover, 400);
         });
 
-        title.textContent = item.titulo;
+        title.textContent = item.description;
 
-        Carousel.ResetInterval();
+        Carousel.resetInterval();
     }
 }
-
-

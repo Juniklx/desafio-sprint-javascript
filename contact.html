@@ -60,7 +60,7 @@
                         Fale Conosco Ford Ranger 2022
                     </h1>
                     <h2>Fale Conosco</h2>
-                    <form id="form-contato" onsubmit="return Post(this)">
+                    <form id="form-contato" onsubmit="return submitContactForm(this)">
                         <div class="contato__campo">
                             <label for="nome">Nome</label>
                             <input
@@ -89,7 +89,7 @@
                                 name="cpf"
                                 inputmode="number"
                                 maxlength="14"
-                                oninput="MascararCpf(this)"
+                                oninput="maskCpf(this)"
                                 placeholder="Digite seu CPF"
                                 required
                             />
@@ -112,7 +112,7 @@
                                 name="telefone"
                                 inputmode="number"
                                 maxlength="15"
-                                oninput="MascararTelefone(this)"
+                                oninput="maskPhone(this)"
                                 placeholder="Digite seu telefone com DDD"
                                 required
                             />

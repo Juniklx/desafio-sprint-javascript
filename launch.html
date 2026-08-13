@@ -97,9 +97,9 @@
                             class="pagina__fotos__checkbox"
                             autocomplete="off"
                             onchange="
-                                SetCarToCompare(
+                                setVehicleToCompare(
                                     this,
-                                    new Car(
+                                    new VehicleModel(
                                         'XL Cabine Simples 2.2 Diesel 4X4 MT 2022',
                                         183850,
                                         511,
@@ -146,9 +146,9 @@
                             id="check-xls"
                             autocomplete="off"
                             onchange="
-                                SetCarToCompare(
+                                setVehicleToCompare(
                                     this,
-                                    new Car(
+                                    new VehicleModel(
                                         'XLS 2.2 Diesel 4X4 AT 2022',
                                         220690,
                                         511,
@@ -193,9 +193,9 @@
                             id="check-storm"
                             autocomplete="off"
                             onchange="
-                                SetCarToCompare(
+                                setVehicleToCompare(
                                     this,
-                                    new Car(
+                                    new VehicleModel(
                                         'Storm 3.2 Diesel 4X4 AT 2022',
                                         222790,
                                         511,
@@ -225,7 +225,7 @@
                     </div>
                 </li>
             </ul>
-            <button type="button" class="pagina__comparar" onclick="ShowCompare()">
+            <button type="button" class="pagina__comparar" onclick="showCompare()">
                 COMPARAR PREÇOS
             </button>
         </main>
@@ -348,7 +348,7 @@
                 <button
                     type="button"
                     style="height: 40px; width: 200px"
-                    onclick="HideCompare()"
+                    onclick="hideCompare()"
                     class="closebutton"
                 >
                     Fechar

@@ -1,15 +1,15 @@
-class Contato {
-    constructor(nome, email, cpf, sobrenome, telefone, tipoContato) {
-        this.nome = nome;
+class ContactRequest {
+    constructor(name, email, cpf, lastName, phone, contactType) {
+        this.name = name;
         this.email = email;
         this.cpf = cpf;
-        this.sobrenome = sobrenome;
-        this.telefone = telefone;
-        this.tipoContato = tipoContato;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.contactType = contactType;
     }
 }
 
-function MascararCpf(input) {
+function maskCpf(input) {
     let numeros = input.value.replace(/\D/g, "").slice(0, 11);
     let valorFormatado = "";
     if (numeros.length > 9) {
@@ -24,7 +24,7 @@ function MascararCpf(input) {
     input.value = valorFormatado;
 }
 
-function MascararTelefone(input) {
+function maskPhone(input) {
     let numeros = input.value.replace(/\D/g, "").slice(0, 11);
     let valorFormatado = "";
     if (numeros.length > 10) {
@@ -40,8 +40,8 @@ function MascararTelefone(input) {
 }
 
 
-function Post(form) {
-    const data = new Contato(
+function submitContactForm(form) {
+    const data = new ContactRequest(
         form.elements.namedItem("nome").value,
         form.elements.namedItem("email").value,
         form.elements.namedItem("cpf").value,
@@ -51,16 +51,16 @@ function Post(form) {
     );
 
     console.log(data);
-    Enviar(data);
+    sendConfirmation(data);
     form.reset();
 
     return false;
 }
 
-function Enviar(data) {
+function sendConfirmation(data) {
     const mensagem = document.getElementById("mensagem");
     mensagem.textContent =
         "Obrigado sr(a) " +
-        data.nome +
+        data.name +
         ", os seus dados foram encaminhados com sucesso.";
 }

@@ -11,17 +11,10 @@ class Carousel {
         if (!arr || arr.length === 0) {
             throw "O método Start precisa de uma Array disponível.";
         }
-
         carouselArr = arr;
         Carousel._sequence = 0;
         Carousel._size = arr.length;
-
-<<<<<<< HEAD
         Carousel.UpdateView();
-=======
-        Carousel.Next();
-        Carousel.ResetInterval();
->>>>>>> 8d975680525a7c669cb6ac67a549549b519cd974
     }
 
     static ResetInterval() {

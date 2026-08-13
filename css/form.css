@@ -1,53 +1,77 @@
-.fordform {
-    display: block;
-    width: 300px;
-    border: 1px solid #cccccc;
-    border-radius: 10px;
-    height: 26px;
-    margin: 8px;
-    font-size: 13px;
-    padding: 5px;
+.contato__formulario {
+    width: 30%;
+    background: var(--cor-branca);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    margin: 2rem 0;
 }
 
-select.fordform {
-    width: 310px;
-    height: 36px;
-    color: #807d7d;
-}
-
-input:focus-visible {
-    outline: none;
-}
-
-select:focus-visible {
-    outline: none;
-}
-
-main div {
-    display: inline-block;
-    vertical-align: top;
-    text-align: left;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.forms {
-    display: block;
+.contato__formulario h2 {
+    padding: 2rem;
+    color: var(--cor-azul);
+    font-size: 2rem;
+    font-weight: 800;
     text-align: center;
 }
 
-h2 {
-    text-align: left;
-    font-weight: 800;
+.contato__formulario p {
+    margin-bottom: 1.875rem;
+    color: #777;
 }
 
-button {
-    width: 200px;
-    height: 40px;
-    margin-right: 8px;
-    float: right;
+.contato__formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 2.5rem 2.5rem;
 }
 
-.titulo {
-    margin-left: 8px;
+.contato__formulario label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.contato__formulario :is(input, select, textarea) {
+    padding: 1rem 1.125rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.contato__formulario :is(input, select, textarea):focus {
+    outline: none;
+    border-color: var(--cor-azul);
+    box-shadow: 0 0 10px rgba(0, 52, 120, 0.3);
+}
+
+.contato__formulario textarea {
+    resize: vertical;
+}
+
+.contato__formulario button {
+    padding: 1rem;
+    background: var(--cor-azul);
+    color: var(--cor-branca);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.contato__formulario button:hover {
+    background: var(--cor-botao-hover);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1200px) {
+    .contato__formulario {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
 }

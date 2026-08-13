@@ -28,12 +28,13 @@ function MascararTelefone(input) {
     let numeros = input.value.replace(/\D/g, "").slice(0, 11);
     let valorFormatado = "";
     if (numeros.length > 10) {
-        valorFormatado = numeros.replace(/^(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
-        valorFormatado = numeros.replace(/^(\d{2})(\d{4})(\d{0,4})/, "($1) $2-$3");
+        valorFormatado = numeros.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+    } else if (numeros.length > 6) {
+        valorFormatado = numeros.replace(/^(\d{2})(\d{4})(\d{0,4})$/, "($1) $2-$3");
     } else if (numeros.length > 2) {
-        valorFormatado = numeros.replace(/^(\d{2})(\d{0,5})/, "($1) $2");
+        valorFormatado = numeros.replace(/^(\d{2})(\d{0,4})$/, "($1) $2");
     } else if (numeros.length > 0) {
-        valorFormatado = numeros.replace(/^(\d*)/, "($1");
+        valorFormatado = numeros.replace(/^(\d*)$/, "($1");
     }
     input.value = valorFormatado;
 }

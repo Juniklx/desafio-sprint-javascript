@@ -43,13 +43,29 @@ html {
 }
 
 #carousel {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    position: relative;
+    width: 90%;
+    aspect-ratio: 16 / 7;
     overflow: hidden;
     border-radius: 0 0 1rem 1rem;
+}
+
+#carousel .carousel-slide {
+    position: absolute;
+    inset: 0;
+    display: block;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+#carousel .carousel-slide.is-visible {
     opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+}
+
+#carousel .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -58,18 +74,6 @@ html {
 
 .carousel-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
-}
-
-#carousel.fade {
-    opacity: 0;
-}
-
-div#carousel {
-    justify-content: center;
-    width: 90%;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    transition: 0.6s ease-in-out;
 }
 
 div#carousel-title {
@@ -250,6 +254,7 @@ button:focus-visible {
     align-items: center;
     justify-content: center;
     padding: 1.5rem 3rem;
+    margin-bottom: 4rem;
     background: var(--cor-azul);
     border: none;
     border-radius: var(--border-radius);
@@ -347,10 +352,6 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
     flex-shrink: 0;
 }
 
-.pagina__comparar {
-    margin-bottom: 4rem;
-}
-
 .contato {
     display: flex;
     align-items: center;
@@ -367,81 +368,10 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
     width: 100%;
 }
 
-.contato__formulario {
-    width: 30%;
-    background: var(--cor-branca);
-    border-radius: 18px;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-    margin: 2rem 0;
-}
-
-.contato__formulario h2 {
-    padding: 2rem;
-    color: var(--cor-azul);
-    font-size: 2rem;
-    font-weight: 800;
-    text-align: center;
-}
-
-.contato__formulario p {
-    margin-bottom: 1.875rem;
-    color: #777;
-}
-
-.contato__formulario form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0 2.5rem 2.5rem;
-}
-
 .contato__campo {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-.contato__formulario label {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #222;
-}
-
-.contato__formulario :is(input, select, textarea) {
-    padding: 1rem 1.125rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-family: inherit;
-    transition: var(--transition);
-}
-
-.contato__formulario :is(input, select, textarea):focus {
-    outline: none;
-    border-color: var(--cor-azul);
-    box-shadow: 0 0 10px rgba(0, 52, 120, 0.3);
-}
-
-.contato__formulario textarea {
-    resize: vertical;
-}
-
-.contato__formulario button {
-    padding: 1rem;
-    background: var(--cor-azul);
-    color: var(--cor-branca);
-    border: none;
-    border-radius: var(--border-radius);
-    font-size: 1.0625rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.contato__formulario button:hover {
-    background: var(--cor-botao-hover);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-    transform: translateY(-3px);
 }
 
 .rodape {
@@ -550,11 +480,6 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
         flex-direction: column;
         width: 70%;
         gap: 0;
-    }
-
-    .contato__formulario {
-        width: 100%;
-        margin-bottom: 3rem;
     }
 
     .contato__imagem {
@@ -679,16 +604,6 @@ body:has(#menu-hamburguer:checked) :is(.pagina, .rodape) {
         justify-content: center;
     }
 
-    .carousel-container img {
-        width: auto;
-        height: 300px;
-    }
-
-    div#carousel a {
-        display: flex;
-        justify-content: center;
-    }
-    
     div#carousel-title {
         font-size: 0.9rem;
         width: 90%;

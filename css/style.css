@@ -451,6 +451,7 @@ body:has(#menu-hamburguer:checked) :is(.page, .footer) {
 
     #carousel {
         border-radius: 0;
+        aspect-ratio: 16 / 9;
     }
 
     .page__text {
@@ -604,9 +605,19 @@ body:has(#menu-hamburguer:checked) :is(.page, .footer) {
         justify-content: center;
     }
 
+    #carousel {
+        aspect-ratio: 4 / 3;
+    }
+
+    .carousel__button {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
     div#carousel-title {
         font-size: 0.9rem;
         width: 90%;
+        margin: 1.5rem 0;
     }
 
     .page__video-link {

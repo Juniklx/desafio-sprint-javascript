@@ -86,17 +86,17 @@ function updateCompareTable() {
     for (let i = 0; i < 2; i++) {
         const item = vehiclesToCompare[i];
 
-        document.getElementById(`compare_image_${i}`).innerHTML =
+        document.getElementById(`compare-image-${i}`).innerHTML =
             `<img src="${item.image}" alt="${item.name}" style="max-width:100px">`;
-        document.getElementById(`compare_modelo_${i}`).textContent = item.name;
-        document.getElementById(`compare_alturacacamba_${i}`).textContent = item.bedHeight;
-        document.getElementById(`compare_alturaveiculo_${i}`).textContent = item.vehicleHeight;
-        document.getElementById(`compare_alturasolo_${i}`).textContent = item.groundClearance;
-        document.getElementById(`compare_capacidadecarga_${i}`).textContent = item.loadCapacity;
-        document.getElementById(`compare_motor_${i}`).textContent = item.engine;
-        document.getElementById(`compare_potencia_${i}`).textContent = item.power;
-        document.getElementById(`compare_volumecacamba_${i}`).textContent = item.bedVolume;
-        document.getElementById(`compare_roda_${i}`).textContent = item.wheels;
-        document.getElementById(`compare_preco_${i}`).textContent = formatPrice(item.price);
+        document.getElementById(`compare-model-${i}`).textContent = item.name;
+        document.getElementById(`compare-bed-height-${i}`).textContent = item.bedHeight;
+        document.getElementById(`compare-vehicle-height-${i}`).textContent = item.vehicleHeight;
+        document.getElementById(`compare-ground-clearance-${i}`).textContent = item.groundClearance;
+        document.getElementById(`compare-load-capacity-${i}`).textContent = item.loadCapacity;
+        document.getElementById(`compare-engine-${i}`).textContent = item.engine;
+        document.getElementById(`compare-power-${i}`).textContent = item.power;
+        document.getElementById(`compare-bed-volume-${i}`).textContent = item.bedVolume;
+        document.getElementById(`compare-wheels-${i}`).textContent = item.wheels;
+        document.getElementById(`compare-price-${i}`).textContent = formatPrice(item.price);
     }
 }

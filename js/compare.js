@@ -68,10 +68,6 @@ function HideCompare() {
     document.getElementById("compare").style.display = "none";
 }
 
-// alguns navegadores restauram o estado marcado dos checkboxes ao voltar
-// ou recarregar a página, mesmo com autocomplete="off" no HTML — sem isso,
-// o checkbox fica marcado visualmente sem o carArr ter sido preenchido de
-// novo, e o botão "comparar preço" para de funcionar
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".pagina__fotos__checkbox").forEach((checkbox) => {
         checkbox.checked = false;

@@ -15,7 +15,7 @@
 }
 
 .contact-form p {
-    margin-bottom: 1.875rem;
+    padding-bottom: 1rem;
     color: #777;
 }
 
@@ -67,6 +67,30 @@
     background: var(--cor-botao-hover);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
     transform: translateY(-3px);
+}
+
+.contact-form button:disabled {
+    background: gray;
+    pointer-events: none;
+}
+
+.checkboxTermos {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.termos-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.linkTermos {
+    color: var(--cor-azul);
+    font-weight: 500;
 }
 
 @media (max-width: 1200px) {

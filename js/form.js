@@ -13,9 +13,15 @@ function maskCpf(input) {
     let numeros = input.value.replace(/\D/g, "").slice(0, 11);
     let valorFormatado = "";
     if (numeros.length > 9) {
-        valorFormatado = numeros.replace(/^(\d{3})(\d{3})(\d{3})(\d{1,2})$/, "$1.$2.$3-$4");
+        valorFormatado = numeros.replace(
+            /^(\d{3})(\d{3})(\d{3})(\d{1,2})$/,
+            "$1.$2.$3-$4",
+        );
     } else if (numeros.length > 6) {
-        valorFormatado = numeros.replace(/^(\d{3})(\d{3})(\d{1,3})$/, "$1.$2.$3");
+        valorFormatado = numeros.replace(
+            /^(\d{3})(\d{3})(\d{1,3})$/,
+            "$1.$2.$3",
+        );
     } else if (numeros.length > 3) {
         valorFormatado = numeros.replace(/^(\d{3})(\d{1,3})$/, "$1.$2");
     } else {
@@ -28,9 +34,15 @@ function maskPhone(input) {
     let numeros = input.value.replace(/\D/g, "").slice(0, 11);
     let valorFormatado = "";
     if (numeros.length > 10) {
-        valorFormatado = numeros.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+        valorFormatado = numeros.replace(
+            /^(\d{2})(\d{5})(\d{4})$/,
+            "($1) $2-$3",
+        );
     } else if (numeros.length > 6) {
-        valorFormatado = numeros.replace(/^(\d{2})(\d{4})(\d{0,4})$/, "($1) $2-$3");
+        valorFormatado = numeros.replace(
+            /^(\d{2})(\d{4})(\d{0,4})$/,
+            "($1) $2-$3",
+        );
     } else if (numeros.length > 2) {
         valorFormatado = numeros.replace(/^(\d{2})(\d{0,4})$/, "($1) $2");
     } else if (numeros.length > 0) {
@@ -38,7 +50,6 @@ function maskPhone(input) {
     }
     input.value = valorFormatado;
 }
-
 
 function submitContactForm(form) {
     const data = new ContactRequest(
@@ -56,6 +67,13 @@ function submitContactForm(form) {
 
     return false;
 }
+
+const checkbox = document.getElementById("checkTermos");
+const botao = document.getElementById("botaoEnviar");
+
+checkbox.addEventListener("change", function () {
+    botao.disabled = !this.checked;
+});
 
 function sendConfirmation(data) {
     const mensagem = document.getElementById("mensagem");

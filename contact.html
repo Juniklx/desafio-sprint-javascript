@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/form.css" />
-        <script src="js/form.js"></script>
+        <script src="js/form.js" defer></script>
     </head>
 
     <body>
@@ -39,9 +39,7 @@
 
             <nav class="header__nav" id="menu-navegacao">
                 <a href="index.html" class="header__nav-link">HOME</a>
-                <a href="launch.html" class="header__nav-link"
-                    >LANÇAMENTO</a
-                >
+                <a href="launch.html" class="header__nav-link">LANÇAMENTO</a>
                 <a
                     href="contact.html"
                     class="header__nav-link"
@@ -60,7 +58,10 @@
                         Fale Conosco Ford Ranger 2022
                     </h1>
                     <h2>Fale Conosco</h2>
-                    <form id="form-contato" onsubmit="return submitContactForm(this)">
+                    <form
+                        id="form-contato"
+                        onsubmit="return submitContactForm(this);"
+                    >
                         <div class="contact__fields">
                             <label for="nome">Nome</label>
                             <input
@@ -118,7 +119,9 @@
                             />
                         </div>
                         <div class="contact__fields">
-                            <label for="tipo-contato">Como deseja ser contatado?</label>
+                            <label for="tipo-contato"
+                                >Como deseja ser contatado?</label
+                            >
                             <select
                                 id="tipo-contato"
                                 name="tipo-contato"
@@ -131,7 +134,47 @@
                                 <option>Telefone</option>
                             </select>
                         </div>
-                        <button type="submit">Enviar</button>
+                        <div class="divForm">
+                            <p>
+                                Os dados serão mantidos em nossa base de dados,
+                                só enquanto for desejado por você. A qualquer
+                                momento, será possível editar ou remover tais
+                                dados.
+                                <a
+                                    class="linkTermos"
+                                    target="_blank"
+                                    href="https://www.ford.com.br/politica-de-privacidade/ "
+                                    >Termos e Condições</a
+                                >
+                            </p>
+                            <br />
+                            <div class="termos-item">
+                                <input
+                                    type="checkbox"
+                                    class="checkboxTermos"
+                                    id="checkTermos"
+                                />
+                                <label for="checkTermos"
+                                    >Sim. Li e concordo com os Termos e
+                                    Condições.</label
+                                >
+                            </div>
+
+                            <div class="termos-item">
+                                <input
+                                    type="checkbox"
+                                    class="checkboxTermos"
+                                    id="checkNovidades"
+                                />
+                                <label for="checkNovidades"
+                                    >Sim. Também quero receber descontos e
+                                    novidades.</label
+                                >
+                            </div>
+                        </div>
+                        <button disabled id="botaoEnviar" type="submit">
+                            Enviar
+                        </button>
                         <p
                             id="mensagem"
                             class="form__feedback"
